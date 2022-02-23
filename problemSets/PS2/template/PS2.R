@@ -32,14 +32,9 @@ lapply(c(),  pkgTest)
 # set wd for current folder
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-
 #####################
 # Problem 1
 #####################
 
-set.seed(123)
-# create empirical distribution of observed data
-ECDF <- ecdf(data)
-empiricalCDF <- ECDF(data)
-# generate test statistic
-D <- max(abs(empiricalCDF - pnorm(data)))
+# load data
+load(url("https://github.com/ASDS-TCD/StatsII_Spring2022/blob/main/datasets/climateSupport.RData?raw=true"))
